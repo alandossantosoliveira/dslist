@@ -10,7 +10,7 @@ DSList é uma aplicação back end web construída durante um evento da **Semana
 A aplicação consiste em uma lista qualquer de games, onde esses games tem categorias (dominio/lists). Na tela onde é listado os games é possível alterar a posição dos games. Por exemplo, o quarto game da lista de jogos "Jogos de plataforma" (/lists/2/games) é o "Cuphead". Posso movê-lo de uma posição para outra na lista num front end que clica e arrasta o item.
 
 ## Modelo conceitual
-![Modelo Conceitual](https://github.com/acenelio/assets/raw/main/sds1/modelo-conceitual.png)
+![Modelo Conceitual](https://github.com/alandossantosoliveira/dslist/blob/main/assets/modelo-de-dominio.png)
 
 # Tecnologias utilizadas
 ## Back end
