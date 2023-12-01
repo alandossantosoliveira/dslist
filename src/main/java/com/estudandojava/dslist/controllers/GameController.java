@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.estudandojava.dslist.dto.GameDTO;
 import com.estudandojava.dslist.dto.GameMinDTO;
+import com.estudandojava.dslist.exceptions.UnsupportedGetException;
 import com.estudandojava.dslist.services.GameService;
 
 @RestController
@@ -26,8 +27,12 @@ public class GameController {
 	}
 	
 	@GetMapping(value = "/{id}")
-	public GameDTO findById(@PathVariable Long id){
-		GameDTO result = gameService.findById(id);
-		return result;
+	public GameDTO findById(@PathVariable Long id) throws Exception{
+	   GameDTO result = gameService.findById(id);
+	   if (result == null) {
+		   System.out.print("estamos aqui.");
+		   throw new UnsupportedGetException("This id game not exists!");	
+	   }
+       return result;
 	}
 }

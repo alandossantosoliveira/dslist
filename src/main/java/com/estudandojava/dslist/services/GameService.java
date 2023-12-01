@@ -43,8 +43,14 @@ public class GameService {
 	
 	@Transactional(readOnly=true)
 	public GameDTO findById(Long id) {
-		Game result = gameRepository.findById(id).get();
-		GameDTO dto = new GameDTO(result);
+		GameDTO dto = null;
+		if (gameRepository.existsById(id)) {
+			Game result = gameRepository.findById(id).get();
+			dto = new GameDTO(result);
+			System.out.println("Game existe!");
+		}else {
+			System.out.println("Game não existe!");
+		}
 		return dto;
 	}
 }
